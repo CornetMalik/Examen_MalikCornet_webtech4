@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div.well
+    h1 Quotes
+
+    form(action='quotes/search' method='post')
+      table
+        tr
+          td
+            input(type='text' name='quote' size=35)
+          td(align='right')
+              input(type='Submit', value='Search')
+    ul
+      each quote in quotes
+        li: #{quote}
+
+    form(action='quotes/new' method='post')
+      table
+        tr
+          td
+            input(type='text' name='quote' size=35)
+          td(align='right')
+              input(type='Submit', value='Add')
